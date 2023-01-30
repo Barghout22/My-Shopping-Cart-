@@ -10,3 +10,4 @@ In this project I create a simple shopping cart with page routes using react rou
 I also perform component testing using react test library.
 There is a homepage , shopping page and check out page.
 The shop items are created using functional components. 
+This project saw my first use of typescript as well.
