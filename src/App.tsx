@@ -1,22 +1,22 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/header";
+import Homepage from "./components/homepage";
+import Shop from "./components/shop";
+import Checkout from "./components/checkout";
 
 function App() {
   return (
     <div className="App">
-      <div className="header">
-        <div className="leftSideHeader">
-          <div className="topLeftHeader">Gundam Style</div>
-          <div className="bottomLeftHeader">
-            your one stop shop for Hobby figures
-          </div>
-        </div>
-        <div className="rightSideHeader">
-          <div className="headerLink">home</div>
-          <div className="headerLink">shop</div>
-          <div className="headerLink">checkout</div>
-        </div>
-      </div>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

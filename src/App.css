@@ -3,29 +3,54 @@
 
 .header {
   width: 100%;
-  height: 20%;
+  height: 7vh;
   background-color: rgb(32, 32, 32);
   color: white;
   display: flex;
   padding: 1%;
-  margin: 0;
 }
 
 .rightSideHeader {
   display: flex;
   margin-left: auto;
-  margin-right: 7%;
+  padding-right: 7%;
 }
 
 .headerLink {
-  margin: 5%;
   font-size: 120%;
-  padding: 2%;
+  padding: 20%;
+  text-align: center;
+  border-left: 2px black dotted;
+  margin: 10%;
 }
 .headerLink:hover {
   background-color: black;
+  border-radius: 10%;
+  cursor: pointer;
 }
 .topLeftHeader {
   font-size: 200%;
   color: red;
+}
+
+.topLeftHeader:hover {
+  background-color: black;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: right;
+  height: 90vh;
+  width: 100%;
+  background-image: url(./test.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.websiteIntro {
+  width: 40%;
+  font-size: 400%;
 }
