@@ -5,16 +5,93 @@ import Header from "./components/header";
 import Homepage from "./components/homepage";
 import Shop from "./components/shop";
 import Checkout from "./components/checkout";
+import { useState } from "react";
+const uniqid = require("uniqid");
 
 function App() {
+  interface itemCart {
+    name: string;
+    price: number;
+    image: string;
+    id: string;
+    quantity: number;
+  }
+  const [cartContent, setCartContent] = useState<number>(0);
+  const [allShopItems] = useState<itemCart[]>([
+    {
+      name: "item1",
+      price: 10,
+      image: "imageItem1",
+      id: uniqid(),
+      quantity: 0,
+    },
+    {
+      name: "item2",
+      price: 20,
+      image: "imageItem1",
+      id: uniqid(),
+      quantity: 0,
+    },
+    {
+      name: "item3",
+      price: 30,
+      image: "imageItem1",
+      id: uniqid(),
+      quantity: 0,
+    },
+  ]);
+  const [itemsInCart, setItemsInCart] = useState<itemCart[] | undefined>([]);
+
+  const adjustCartContents = (value: number, id: string) => {
+    const totalCartItems = itemsInCart;
+
+    if (totalCartItems) {
+      let itemsAdjusted = totalCartItems.find((item) => item.id === id);
+      if (itemsAdjusted) {
+        if (value === 0) {
+          totalCartItems.splice(totalCartItems.indexOf(itemsAdjusted), 1);
+        } else {
+          totalCartItems[totalCartItems.indexOf(itemsAdjusted)].quantity =
+            value;
+        }
+      } else {
+        itemsAdjusted = allShopItems.find((item) => item.id === id);
+        itemsAdjusted!.quantity = value;
+        totalCartItems.push(itemsAdjusted!);
+      }
+    } else {
+      let itemsAdjusted = allShopItems.find((item) => item.id === id);
+      itemsAdjusted!.quantity = value;
+      totalCartItems!.push(itemsAdjusted!);
+    }
+    const numberOfItems =
+      totalCartItems?.reduce(
+        (accumulator, currentValue) =>
+          accumulator + Number(currentValue.quantity),
+        0
+      ) || 0;
+
+    setItemsInCart(totalCartItems);
+    setCartContent(numberOfItems);
+    console.log(totalCartItems);
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        <Header cartContent={cartContent} />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path="/shop"
+            element={
+              <Shop addToCart={adjustCartContents} shopItems={allShopItems} />
+            }
+          />
+          <Route
+            path="/checkout"
+            element={<Checkout itemsInCart={itemsInCart} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

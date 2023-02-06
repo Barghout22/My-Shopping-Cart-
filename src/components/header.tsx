@@ -2,7 +2,7 @@ import React from "react";
 import cart from "../resources/trolley.png";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ cartContent }: { cartContent: number }) => {
   return (
     <div className="header">
       <div className="leftSideHeader">
@@ -21,6 +21,7 @@ const Header = () => {
         <Link to="/checkout">
           <div className="headerLink">
             <img src={cart} alt="cart" />
+            {cartContent > 0 ? cartContent : null}
           </div>
         </Link>
       </div>
