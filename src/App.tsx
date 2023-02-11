@@ -118,15 +118,15 @@ function App() {
       <BrowserRouter>
         <Header cartContent={cartContent} />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/shopping-cart/" element={<Homepage />} />
           <Route
-            path="/shop"
+            path="/shopping-cart/shop"
             element={
               <Shop addToCart={adjustCartContents} shopItems={allShopItems} />
             }
           />
           <Route
-            path="/checkout"
+            path="/shopping-cart/checkout"
             element={
               <Checkout
                 itemsInCart={itemsInCart}

@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 const Header = ({ cartContent }: { cartContent: number }) => {
   return (
     <div className="header">
-      <Link to="/">
+      <Link to="/shopping-cart/">
         <h1 className="topLeftHeader">Gundam Style</h1>
       </Link>
       <ul className="rightSideHeader">
         <li className="headerLink">
-          <Link to="/shop">Shop</Link>
+          <Link to="/shopping-cart/shop">Shop</Link>
         </li>
         <li className="headerLink">
-          <Link to="/checkout">
+          <Link to="/shopping-cart/checkout">
             {cartContent > 0 ? (
               <span className="itemsInCart">{cartContent} </span>
             ) : null}
