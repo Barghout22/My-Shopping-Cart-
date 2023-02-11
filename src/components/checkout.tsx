@@ -8,7 +8,13 @@ interface itemCart {
   quantity: number;
 }
 
-const Checkout = ({ itemsInCart }: { itemsInCart: itemCart[] | undefined }) => {
+const Checkout = ({
+  itemsInCart,
+  addToCart,
+}: {
+  itemsInCart: itemCart[] | undefined;
+  addToCart: Function;
+}) => {
   const [totalPrice, setTotalPrice] = useState<number | undefined>(0);
   useEffect(() => {
     let prices: number | undefined = 0;
@@ -24,12 +30,21 @@ const Checkout = ({ itemsInCart }: { itemsInCart: itemCart[] | undefined }) => {
       {itemsInCart?.map(
         (item) =>
           item.quantity > 0 && (
-            
             <div key={item.id} className="shopItem">
               <div>{item.image}</div>
               <div>{item.name}</div>
               <div>
-                ${item.price} * {item.quantity} units
+                ${item.price} * {item.quantity} units{" "}
+                <button
+                  onClick={() => addToCart(Number(item.quantity) - 1, item.id)}
+                >
+                  -
+                </button>
+                <button
+                  onClick={() => addToCart(Number(item.quantity) + 1, item.id)}
+                >
+                  +
+                </button>
               </div>
               {/* <div>
             <input
@@ -42,6 +57,12 @@ const Checkout = ({ itemsInCart }: { itemsInCart: itemCart[] | undefined }) => {
           )
       )}
       {totalPrice! > 0 && <div>total price : $ {totalPrice}</div>}
+      {totalPrice === 0 && (
+        <div>
+          <div>no Items in Cart</div>
+          <div>go to the shop and add some stuff!</div>{" "}
+        </div>
+      )}
     </div>
   );
 };

@@ -30,6 +30,7 @@ const Shop = ({
             <input
               type="number"
               min={0}
+              defaultValue={item.quantity}
               onChange={(e) => adjustCart(e, item.id)}
             />
           </div>

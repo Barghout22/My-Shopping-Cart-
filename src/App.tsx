@@ -17,7 +17,7 @@ function App() {
     quantity: number;
   }
   const [cartContent, setCartContent] = useState<number>(0);
-  const [allShopItems] = useState<itemCart[]>([
+  const [allShopItems, setAllShopItems] = useState<itemCart[]>([
     {
       name: "item1",
       price: 10,
@@ -43,37 +43,22 @@ function App() {
   const [itemsInCart, setItemsInCart] = useState<itemCart[] | undefined>([]);
 
   const adjustCartContents = (value: number, id: string) => {
-    const totalCartItems = itemsInCart;
+    //const totalCartItems = itemsInCart;
+    const totalCartItems = allShopItems;
+    let itemsAdjusted = totalCartItems.find((item) => item.id === id);
+    totalCartItems[totalCartItems.indexOf(itemsAdjusted!)].quantity = value;
+    let addedItems = totalCartItems.filter((item) => item.quantity > 0);
 
-    if (totalCartItems) {
-      let itemsAdjusted = totalCartItems.find((item) => item.id === id);
-      if (itemsAdjusted) {
-        if (value === 0) {
-          totalCartItems.splice(totalCartItems.indexOf(itemsAdjusted), 1);
-        } else {
-          totalCartItems[totalCartItems.indexOf(itemsAdjusted)].quantity =
-            value;
-        }
-      } else {
-        itemsAdjusted = allShopItems.find((item) => item.id === id);
-        itemsAdjusted!.quantity = value;
-        totalCartItems.push(itemsAdjusted!);
-      }
-    } else {
-      let itemsAdjusted = allShopItems.find((item) => item.id === id);
-      itemsAdjusted!.quantity = value;
-      totalCartItems!.push(itemsAdjusted!);
-    }
     const numberOfItems =
       totalCartItems?.reduce(
         (accumulator, currentValue) =>
           accumulator + Number(currentValue.quantity),
         0
       ) || 0;
-
-    setItemsInCart(totalCartItems);
+    setAllShopItems(totalCartItems);
+    setItemsInCart(addedItems);
     setCartContent(numberOfItems);
-    console.log(totalCartItems);
+    //console.log(totalCartItems);
   };
 
   return (
@@ -90,7 +75,12 @@ function App() {
           />
           <Route
             path="/checkout"
-            element={<Checkout itemsInCart={itemsInCart} />}
+            element={
+              <Checkout
+                itemsInCart={itemsInCart}
+                addToCart={adjustCartContents}
+              />
+            }
           />
         </Routes>
       </BrowserRouter>
