@@ -68,10 +68,9 @@
 }
 
 .websiteIntro {
-  padding-top: 20%;
-  padding-left: 5%;
-  width: 50%;
-  font-size: 220%;
+  padding-top: 16vh;
+  width: 60vw;
+  font-size: 190%;
   font-weight: bold;
 }
 
@@ -168,7 +167,7 @@ img.cartImgs {
 .cartValueAdjustBtnMinus {
   aspect-ratio: 1/1;
   width: 100%;
-  font-size: 150%;
+  font-size: 100%;
   font-weight: bold;
   color: white;
   text-align: center;
@@ -190,7 +189,7 @@ img.cartImgs {
 }
 
 .btnContnr {
-  width: 5%;
+  width: 4vw;
   display: flex;
   flex-direction: column;
 }
@@ -201,7 +200,7 @@ img.cartImgs {
 }
 .itemNameCart {
   padding: 2%;
-  font-size: 120%;
+  font-size: 60%;
 }
 
 .totalContainer {

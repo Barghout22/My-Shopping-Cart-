@@ -36,7 +36,10 @@ const Checkout = ({
                 alt="gundam kit "
                 className="cartImgs"
               ></img>
-              <p className="itemNameCart">{item.name}</p>
+              <div className="itemNameCart">
+                <p>{item.name}</p>
+                <p>EGP {item.price}.00</p>
+              </div>
               <p className="priceTag">x {item.quantity} units </p>
               <div className="btnContnr">
                 <button
