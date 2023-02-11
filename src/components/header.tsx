@@ -1,30 +1,27 @@
 import React from "react";
-import cart from "../resources/trolley.png";
+import cart2 from "../resources/cart.png";
 import { Link } from "react-router-dom";
 
 const Header = ({ cartContent }: { cartContent: number }) => {
   return (
     <div className="header">
-      <div className="leftSideHeader">
-        <Link to="/">
-          <div className="topLeftHeader">Gundam Style</div>
-        </Link>
+      <Link to="/">
+        <h1 className="topLeftHeader">Gundam Style</h1>
+      </Link>
+      <ul className="rightSideHeader">
+        <li className="headerLink">
+          <Link to="/shop">Shop</Link>
+        </li>
+        <li className="headerLink">
+          <Link to="/checkout">
+            {cartContent > 0 ? (
+              <span className="itemsInCart">{cartContent} </span>
+            ) : null}
 
-        {/* <div className="bottomLeftHeader">
-            your one stop shop for Hobby figures
-          </div> */}
-      </div>
-      <div className="rightSideHeader">
-        <Link to="/shop">
-          <div className="headerLink">shop</div>
-        </Link>
-        <Link to="/checkout">
-          <div className="headerLink">
-            <img src={cart} alt="cart" />
-            {cartContent > 0 ? cartContent : null}
-          </div>
-        </Link>
-      </div>
+            <img src={cart2} alt="cart" />
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 };

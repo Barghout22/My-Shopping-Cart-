@@ -26,7 +26,7 @@ const Checkout = ({
   }, [itemsInCart]);
 
   return (
-    <div>
+    <div className="cartBody">
       {itemsInCart?.map(
         (item) =>
           item.quantity > 0 && (
@@ -46,21 +46,14 @@ const Checkout = ({
                   +
                 </button>
               </div>
-              {/* <div>
-            <input
-              type="number"
-              min={0}
-              onChange={(e) => adjustCart(e, item.id)}
-            />
-          </div> */}
             </div>
           )
       )}
       {totalPrice! > 0 && <div>total price : $ {totalPrice}</div>}
       {totalPrice === 0 && (
-        <div>
-          <div>no Items in Cart</div>
-          <div>go to the shop and add some stuff!</div>{" "}
+        <div className="emptyCart">
+          <p>no Items in Cart</p>
+          <p>go to the shop and add some stuff! </p>
         </div>
       )}
     </div>

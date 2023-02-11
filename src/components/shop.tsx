@@ -27,12 +27,15 @@ const Shop = ({
           <div>{item.name}</div>
           <div>${item.price}</div>
           <div>
-            <input
-              type="number"
-              min={0}
-              defaultValue={item.quantity}
-              onChange={(e) => adjustCart(e, item.id)}
-            />
+            <label>
+              add to Cart 
+              <input
+                type="number"
+                min={0}
+                defaultValue={item.quantity}
+                onChange={(e) => adjustCart(e, item.id)}
+              />
+            </label>
           </div>
         </div>
       ))}
