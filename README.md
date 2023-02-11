@@ -16,7 +16,7 @@ All three pages use and update the same state ,stored in the main app component.
 
 - Website Icon [iconfinder](https://www.iconfinder.com/icons/1553068/g_letter_red_alphabet_letters_icon)
 - Pictures of kits ,prices and names from **Jumia eg** [here](https://www.jumia.com.eg/catalog/?q=gundam)
-- Background picture for the homepage from [here]](https://pixabay.com/photos/gundam-mobil-toy-product-2008559/)
+- Background picture for the homepage from [here](https://pixabay.com/photos/gundam-mobil-toy-product-2008559/)
 - Color values used : Tailwind CSS official website , Color palette page.
 
 ### Live version
