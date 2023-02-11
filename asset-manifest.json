@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.83e19c70.css",
-    "main.js": "/shopping-cart/static/js/main.a21d3ae9.js",
+    "main.css": "/shopping-cart/static/css/main.ee032939.css",
+    "main.js": "/shopping-cart/static/js/main.2e9b9275.js",
     "static/media/gundam-Home.jpg": "/shopping-cart/static/media/gundam-Home.adc4d81a2301144007a7.jpg",
     "static/media/2.jpg": "/shopping-cart/static/media/2.f0e850b9d8160769bdb1.jpg",
     "static/media/6.jpg": "/shopping-cart/static/media/6.74dcb360d7f566ede28e.jpg",
@@ -13,11 +13,11 @@
     "static/media/5.jpg": "/shopping-cart/static/media/5.94a13d9e5c173717414e.jpg",
     "static/media/1.jpg": "/shopping-cart/static/media/1.1bc48718e0736e3458c5.jpg",
     "index.html": "/shopping-cart/index.html",
-    "main.83e19c70.css.map": "/shopping-cart/static/css/main.83e19c70.css.map",
-    "main.a21d3ae9.js.map": "/shopping-cart/static/js/main.a21d3ae9.js.map"
+    "main.ee032939.css.map": "/shopping-cart/static/css/main.ee032939.css.map",
+    "main.2e9b9275.js.map": "/shopping-cart/static/js/main.2e9b9275.js.map"
   },
   "entrypoints": [
-    "static/css/main.83e19c70.css",
-    "static/js/main.a21d3ae9.js"
+    "static/css/main.ee032939.css",
+    "static/js/main.2e9b9275.js"
   ]
 }
