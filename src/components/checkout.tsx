@@ -30,26 +30,37 @@ const Checkout = ({
       {itemsInCart?.map(
         (item) =>
           item.quantity > 0 && (
-            <div key={item.id} className="shopItem">
-              <div>{item.image}</div>
-              <div>{item.name}</div>
-              <div>
-                ${item.price} * {item.quantity} units{" "}
-                <button
-                  onClick={() => addToCart(Number(item.quantity) - 1, item.id)}
-                >
-                  -
-                </button>
+            <div key={item.id} className="cartItem">
+              <img
+                src={item.image.toString()}
+                alt="gundam kit "
+                className="cartImgs"
+              ></img>
+              <p className="itemNameCart">{item.name}</p>
+              <p className="priceTag">x {item.quantity} units </p>
+              <div className="btnContnr">
                 <button
                   onClick={() => addToCart(Number(item.quantity) + 1, item.id)}
+                  className="cartValueAdjustBtnPlus"
                 >
                   +
+                </button>
+                <button
+                  onClick={() => addToCart(Number(item.quantity) - 1, item.id)}
+                  className="cartValueAdjustBtnMinus"
+                >
+                  -
                 </button>
               </div>
             </div>
           )
       )}
-      {totalPrice! > 0 && <div>total price : $ {totalPrice}</div>}
+      {totalPrice! > 0 && (
+        <div className="totalContainer">
+          <p className="totalPrice">Total: EGP {totalPrice}.00</p>
+          <button className="paymentBtn">Proceed to pay</button>
+        </div>
+      )}
       {totalPrice === 0 && (
         <div className="emptyCart">
           <p>no Items in Cart</p>

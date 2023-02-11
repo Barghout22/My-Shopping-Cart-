@@ -23,12 +23,16 @@ const Shop = ({
     <div className="shopBody">
       {shopItems.map((item: itemCart) => (
         <div key={item.id} className="shopItem">
-          <div>{item.image}</div>
-          <div>{item.name}</div>
-          <div>${item.price}</div>
+          <img
+            src={item.image.toString()}
+            alt="gundam kit"
+            className="shopImage"
+          />
+          <div className="itemName">{item.name}</div>
+          <div className="priceTag">EGP {item.price}.00</div>
           <div>
-            <label>
-              add to Cart 
+            <label className="inputLabel">
+              add to Cart
               <input
                 type="number"
                 min={0}
