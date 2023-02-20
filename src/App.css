@@ -23,9 +23,10 @@
   font-weight: bold;
 }
 .headerLink {
-  padding: 2%;
-  border-radius: 5%;
+  padding: 2% 5% 2% 5%;
+  border-radius: 5px;
   position: relative;
+  transition: all 0.5s ease-out 0.1s;
 }
 .headerLink:hover {
   background-color: black;
