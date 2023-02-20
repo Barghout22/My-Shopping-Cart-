@@ -11,6 +11,7 @@ You can view the project lesson link [here](https://www.theodinproject.com/lesso
 Simple multi page website created using create react app with functional components , react router , Typescript and vanilla Css.
 The website has a homepage, shop and checkout pages.
 All three pages use and update the same state ,stored in the main app component.
+I have added a simple connection to firebase that stores the selected items between reloads of the page.
 
 ## Image sources credit
 
