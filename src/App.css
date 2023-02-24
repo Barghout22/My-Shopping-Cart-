@@ -4,7 +4,7 @@
 
 .header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 16vh;
   background-color: white;
   color: black;
@@ -18,9 +18,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 20%;
-  font-size: 120%;
+  width: 20vw;
+  font-size: 110%;
   font-weight: bold;
+  margin-right: 10vw;
 }
 .headerLink {
   padding: 2% 5% 2% 5%;
@@ -46,7 +47,7 @@
   text-align: center;
 }
 .topLeftHeader {
-  font-size: 270%;
+  font-size: 220%;
   font-weight: bold;
   color: red;
   margin: 0;
@@ -61,7 +62,7 @@
   display: flex;
   justify-content: left;
   height: 90vh;
-  width: 100%;
+  width: 100vw;
   background-image: url(./resources/gundam-Home.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -167,8 +168,10 @@ img.cartImgs {
 .cartValueAdjustBtnPlus,
 .cartValueAdjustBtnMinus {
   aspect-ratio: 1/1;
-  width: 100%;
-  font-size: 100%;
+  width: 5.5vw;
+  height: 5vw;
+  font-size: 5vw;
+  margin: 1vw;
   font-weight: bold;
   color: white;
   text-align: center;
@@ -190,7 +193,7 @@ img.cartImgs {
 }
 
 .btnContnr {
-  width: 4vw;
+  width: 7vw;
   display: flex;
   flex-direction: column;
 }
